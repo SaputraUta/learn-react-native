@@ -1,12 +1,23 @@
-import { View, Button, ActivityIndicator} from "react-native";
-import { useState } from "react";
-const logoImg = require("./assets/adaptive-icon.png");
+import { View, Button, Alert} from "react-native";
 export default function App() {
-  const [isLoading, setIsLoading] = useState(false);
   return (
     <View style={{ flex: 1, backgroundColor: "plum", padding: 60 }}>
-      <ActivityIndicator size={"large"} color={"red"} animating={isLoading}/>
-      <Button title="Loading" onPress={() => setIsLoading(!isLoading)} />
+      <Button title="Alert" onPress={() => Alert.alert("Invalid data!")} />
+      <Button title="Alert" onPress={() => Alert.alert("Invalid data!", "Username is not valid")} />
+      <Button title="Alert" onPress={() => Alert.alert("Invalid data!", "Username is not valid", [
+        {
+          text: "Cancel",
+          onPress: () => {
+            console.log("Cancel Pressed");
+          }
+        },
+        {
+          text: "OK",
+          onPress: () => {
+            console.log("OK Pressed");
+          }
+        }
+      ])} />
     </View>
   );
 }
