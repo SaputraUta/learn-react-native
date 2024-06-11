@@ -3,7 +3,9 @@ import { View, Text, StyleSheet } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>StyleSheet API</Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.title}>StyleSheet <Text style={styles.boldText}>API</Text></Text>
+      </View>
       <View style={styles.cardContainer}>
         <View style={[styles.box, styles.lightblue, styles.boxShadow]}>
           <Text style={styles.boxTitle}>Lightblue box</Text>
@@ -29,6 +31,11 @@ const styles = StyleSheet.create({
     gap: 10,
     padding: 60,
   },
+  headerContainer: {
+    backgroundColor: "lightblue",
+    padding: 8,
+    borderRadius: 10,
+  },
   cardContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -37,8 +44,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: "bold",
     textAlign: "center",
+    color: "white",
+  },
+  boldText: {
+    fontWeight: "bold",
   },
   boxTitle: {
     fontSize: 10,
@@ -63,5 +73,5 @@ const styles = StyleSheet.create({
   boxShadow: {
     shadowColor: "red",
     elevation: 20,
-  }
+  },
 });
