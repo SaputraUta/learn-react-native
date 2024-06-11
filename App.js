@@ -5,7 +5,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>StyleSheet API</Text>
       <View style={styles.cardContainer}>
-        <View style={[styles.box, styles.lightblue]}>
+        <View style={[styles.box, styles.lightblue, styles.boxShadow]}>
           <Text style={styles.boxTitle}>Lightblue box</Text>
         </View>
         <View style={[styles.box, styles.pink]}>
@@ -49,6 +49,10 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     padding: 10,
+    borderColor: "white",
+    borderWidth: 4,
+    borderRadius: 10,
+    borderStyle: "dashed",
   },
   lightblue: {
     backgroundColor: "lightblue",
@@ -56,4 +60,8 @@ const styles = StyleSheet.create({
   pink: {
     backgroundColor: "pink",
   },
+  boxShadow: {
+    shadowColor: "red",
+    elevation: 20,
+  }
 });
